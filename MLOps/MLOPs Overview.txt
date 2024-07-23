@@ -1,0 +1,88 @@
+Machine Learning Operations(MLOPS) - Application of DevOps principle to machine learning wokrflow
+
+
+The ML Process Flow:
+- EDA >> Data Prep (Feature Engineering)>>Model Training >> Deployment >> Monitoring
+
+Machine Learning Project Life Cycle:
+- Scoping: Defining the project
+- Data: Data Collection & Data Prep: Defining the data and establish baseline >> Label and organise the data (
+- Modelling: Select and train model and perform error analysis
+- Deployment: Deploy in production and monitor and maintain the system
+
+
+
+- Sometimes you might want to separate your training & deployment env. As training might need more GPUs for paralle processing
+while deployment might use a docker with load balancer to manage demand. 
+
+
+- Tracking the metrics during the experimentation
+- Source code control
+
+
+- Model Drift: 
+- Data Drift/Concept Drift:  - Seasonality, Consumer Preferences,Changing type of data serving different type of customer segments
+
+POC to Production Gap
+
+Example of speech recognition project:
+- Scoping:What are the key metrics? - accuracy,latency,throughput
+- Data Stage: Data Defintion questions: Is the data labelled consitently? How much silence? How to perform volumne normization?
+- Modelling: Can hold the model fixed and iterate on the data & hyperparameters: Error analyis can help you systematically improve your model and data
+- Deployment:
+
+Concept Drift & Data Drift: data changes after the model has been deployed
+- Example difference in purchase behaviours in customers in a fraud detection model
+Data Drift - If the input data changes  - changes in data distribution
+Concept Drift - The desired mapping between X>Y changes
+
+Prediction Service:
+- Batch Service vs Realtime: Eg. Demand Forecasting is batch to predict for the next 2 weeks
+- Cloud vs Edge/Browser - mobile speech recogniton system on phones or in a car?
+- Compute resources(CPU/GPU/memory)
+- Latency,throughput(Queries/second)
+- Logging
+
+First Deployment vs Maintenance
+
+Deployment Patterns:
+- Using shadow mode: Run in parrale ith the current process and not use the ML for any decision made. E.g mobile phone visual inspection
+(Helps to verify the performance of the model)
+- Canary Deployment: - Rolling out to a small fracton (say 5%) e.g demand forecasting of certain categories>> Monitor system and ramp up the traffic gradually
+- Blue-green deployment: - Switch between old and new version. Enables an easy way to enable rollback
+
+Degrees of automation:
+- Human Only >> Shadow Mode >> 
+- AI assistance >> Partial Automation(cases where the model is not confident): human in the loop
+- Full Automation
+
+Deployment Monitoring:
+- Using monitoring dashboard: Server Load
+- Fraction of non-null outputs
+- Fraction of missing input values
+
+Software Metrics:
+- Memory
+- Compute
+- Latency
+- Throughput
+- Server Load
+
+Input metrics - based on the input data; e.g number of missing value
+
+Output metrics: - # times return "", number of times the user rephrase their question, or feedback whether use found it useful or not
+
+Set thresolds for alarms
+
+Model retraining:
+
+
+
+
+
+
+
+
+
+
+

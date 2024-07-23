@@ -1,0 +1,39 @@
+astAPI is a Python based web framework that allows you to write backend server in a matter of minutes. 
+It can be used as a general backend for any website or a way to deploy machine learning model in form of a REST api server. 
+
+There are some advantages of using FAST API over Django framework.
+
+Has a fast performance on par with Node Js and Go
+
+Uses ASGI - Asynchrnous Server Gateway Interface - while Flask use WSGI.
+
+USe pydantic: A data validation and settings management using python type annotations;
+ >> check type hints during runtime
+
+Swagger is just like JSON Schema
+
+Using Uvicorn to implement ASGI
+
+Creating end points:
+example:
+app = FastAPI()
+@app.get('/hello')  @'/hello' is the entry point
+def hello():
+return 'Welcome to my home page"
+
+Overview of the HTTP methods:
+GET: Used to read data
+POST: Used to create data: e.g creating an order
+PUT: Update the datal update existing order
+DELETE: Used to delete data; e.g. delete order
+
+
+Fast API can also autogenerate Documentation
+
+
+
+Link:https://www.youtube.com/playlist?list=PLZoTAELRMXVPgsojPOHF9i0u2L83-m9P7
+Codebasics:https://www.youtube.com/watch?v=Wr1JjhTt1Xg
+
+
+Deploying Langchain apps in Minutes using fast API: https://www.youtube.com/watch?v=iFvCZD4iS2w
